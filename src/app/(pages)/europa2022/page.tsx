@@ -17,10 +17,11 @@ export default function Europa2022() {
         'Pompeii',
         'Amalfi',
         'Palermo',
-        'Amsterdam Con',
+        'Amsterdam/Con',
         'Amsterdam',
-        'Amsterdam Picnic',
-        'Roma'
+        'Amsterdam/Jan',
+        'Roma',
+        'South Sicily'
     ]
 
     return (

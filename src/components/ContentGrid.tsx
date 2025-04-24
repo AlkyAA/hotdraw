@@ -10,11 +10,12 @@ type Props = {
 export function ContentGrid({menuItems, route}: Props) {
     const menuBoxes = menuItems.map((item, index) => {
         const path = getPath(item)
+        const imagePath = getImagePath(item)
         return (
             <GridItem key={`${item}-${index}`}>
                 <Link href={`${route}/${path}`}>
                     <Stack alignItems={'flex-start'}>
-                        <Image src={`assets/${route}/thumbnails/${path}.jpeg`} alt={`${path} thumbnail`}/>
+                        <Image src={`assets/${route}/thumbnails/${imagePath}.jpeg`} alt={`${path} thumbnail`}/>
                         <Text color={'#f353b0'}
                               fontSize={'14px'}
                               fontWeight={500}>{item}
@@ -24,9 +25,29 @@ export function ContentGrid({menuItems, route}: Props) {
             </GridItem>
         )
     })
+    /*
+    * width={{
+                        base: '100%',
+                        mobile: '450px',
+                        sm: '600px',
+                        md: '750px'
+                    }}
+                    * */
     return (
         <Box w={'100%'} borderTop={'1px grey solid'}>
-            <Grid templateColumns='repeat(4, 120px)' gap={6} marginTop={'5px'}>
+            <Grid
+                templateColumns={{
+                    base: 'repeat(2, 110px)',
+                    mobile: 'repeat(3, 110px)',
+                    sm: 'repeat(4, 100px)',
+                    md: 'repeat(5, 110px)'
+                }}
+                gap={{
+                    base: 6,
+                    sm: 5,
+                    md: 4
+                }}
+                marginTop={'5px'}>
                 {menuBoxes}
             </Grid>
         </Box>
@@ -35,6 +56,14 @@ export function ContentGrid({menuItems, route}: Props) {
 
 function getPath(item: string) {
     let path = item.split(' ')
+    path = path.map(label => label.toLowerCase())
+    return path.join('-')
+}
+
+function getImagePath(item: string) {
+    let path = item.split(' ')
+    let pathStr = path.join('-')
+    path = pathStr.split('/')
     path = path.map(label => label.toLowerCase())
     return path.join('-')
 }

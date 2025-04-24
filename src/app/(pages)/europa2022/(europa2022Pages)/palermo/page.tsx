@@ -1,13 +1,16 @@
+"use client"
 import {
     Box,
     Stack,
     Text
 } from '@chakra-ui/react'
-import React, {ReactNode} from "react";
+import React from "react";
 import {PageTitle} from "@/components/PageTitle";
 import {TextLink} from "@/components/TextLink";
+import {useGallery} from "@/app/helpers/useGallery";
 
 export default function Palermo() {
+    const gallery = useGallery({tag: 'palermo'})
     return (
         <Box w={'100%'}>
             <PageTitle title={'Palermo'} subTitle={'5/7/2022'}/>
@@ -47,6 +50,7 @@ export default function Palermo() {
                         many close calls. See you later Don, Uncle or whatever relative you might be. It also might be a
                         long time between visits but hey, it was an experience.
                     </Text>
+                    {gallery}
                     <TextLink path={'/europa2022/south-sicily'} label={'Next Stop South Sicily'}/>
                 </Stack>
             </Box>

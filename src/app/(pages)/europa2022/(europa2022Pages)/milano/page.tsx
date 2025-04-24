@@ -1,14 +1,17 @@
+"use client"
 import {
     Box,
-    Image,
     Stack,
     Text
 } from '@chakra-ui/react'
 import React from "react";
 import {PageTitle} from "@/components/PageTitle";
 import {TextLink} from "@/components/TextLink";
+import {useGallery} from "@/app/helpers/useGallery";
 
 export default function Milano() {
+    const gallery = useGallery({tag: 'milano'})
+
     return (
         <Box w={'100%'}>
             <PageTitle title={'Milano'} subTitle={'11/6/2022'} color={'sitePink'}/>
@@ -46,6 +49,7 @@ export default function Milano() {
                         drinking and day dreaming in its many many specialists eateries of exceptional quality - pasta,
                         seafood, coffee, salad, gelato, pastry, cheese, wine - man these guys live well.
                     </Text>
+                    {gallery}
                     <TextLink path={'/europa2022/como'} label={'Day Trip to Lake Como'}/>
                 </Stack>
             </Box>

@@ -1,3 +1,4 @@
+"use client"
 import {
     Box,
     Stack,
@@ -5,8 +6,10 @@ import {
 } from '@chakra-ui/react'
 import React from "react";
 import {PageTitle} from "@/components/PageTitle";
+import {useGallery} from "@/app/helpers/useGallery";
 
 export default function Roma() {
+    const gallery = useGallery({tag: 'roma'})
     return (
         <Box w={'100%'}>
             <PageTitle title={'Roma'} subTitle={'18/7/2022'}/>
@@ -24,6 +27,7 @@ export default function Roma() {
                         Here are some pics of that brief but lovely stay. The end of six weeks travelling through
                         wonderful parts of Europe dripping with art, culture and unique landscape.
                     </Text>
+                    {gallery}
                 </Stack>
             </Box>
         </Box>

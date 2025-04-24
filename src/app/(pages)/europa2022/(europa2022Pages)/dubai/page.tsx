@@ -1,14 +1,16 @@
+"use client"
 import {
     Box,
-    Image,
     Stack,
     Text
 } from '@chakra-ui/react'
 import React from "react";
 import {PageTitle} from "@/components/PageTitle";
 import {TextLink} from "@/components/TextLink";
+import {useGallery} from "@/app/helpers/useGallery";
 
 export default function Dubai() {
+    const gallery = useGallery({tag: 'dubai'})
     return (
         <Box w={'100%'}>
             <PageTitle title={'Dubai'} subTitle={'10/6/2022'}/>
@@ -34,6 +36,7 @@ export default function Dubai() {
                         perpetual distrust. It would be ingenuous to conclude the wolf has learnt how to dress like the
                         best of sheep. These roles have become interchangeable now.
                     </Text>
+                    {gallery}
                     <TextLink path={'/europa2022/milano'} label={'Next Stop Milano'}/>
                 </Stack>
             </Box>

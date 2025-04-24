@@ -1,15 +1,22 @@
+"use client"
 import {
     Box,
     Stack,
     Text
 } from '@chakra-ui/react'
-import React from "react";
+import React, {useEffect} from "react";
 import {TextLink} from "@/components/TextLink";
 import {PageTitle} from "@/components/PageTitle";
+import {imageGallery} from "@/utils/utils";
 
 
 export default function Amsterdam() {
-    const con = <TextLink path={'amsterdam-con'} label={'fake accommodation booking'} />
+    useEffect(() => {
+        // @ts-ignore
+        const productGallery = imageGallery({tag: 'amsterdam', containerId: '#image-gallery'});
+        productGallery.render();
+    }, []);
+    const con = <TextLink path={'amsterdam/amsterdam-con'} label={'fake accommodation booking'} />
     return (
         <Box w={'100%'}>
             <PageTitle title={'Amsterdam'} subTitle={'18/7/2022'}/>
@@ -60,7 +67,8 @@ export default function Amsterdam() {
                         an extreme indulgence and the real work is the political work, the individual work, to address a
                         problematic world whose suffering is our suffering, and whose fate is in our hands.
                     </Text>
-                    <TextLink path={'/europa2022/amsterdam-jan'} label={'Visit with Jan'}/>
+                    <Box id={'image-gallery'}/>
+                    <TextLink path={'/europa2022/amsterdam/amsterdam-jan'} label={'Visit with Jan'}/>
                 </Stack>
             </Box>
         </Box>

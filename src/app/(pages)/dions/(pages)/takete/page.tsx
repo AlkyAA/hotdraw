@@ -1,16 +1,19 @@
+"use client"
 import {
-    Box,
+    Box
 } from '@chakra-ui/react'
-import React from "react";
-import {PageTitle} from "@/components/PageTitle";
-
+import React from "react"
+import {TextLink} from "@/components/TextLink";
+import {useGallery} from "@/app/helpers/useGallery";
 export default function Takete() {
+    const gallery = useGallery({
+        title: 'Takete',
+        tag: 'takete'
+    })
     return (
         <Box w={'100%'}>
-            <PageTitle title={'Takete'} />
-            <Box w={'100%'} textAlign={'justify'} color={'white'}>
-
-            </Box>
+            {gallery}
+            <TextLink path={'/dions/bag-show'} label={'Bag Show'}/>
         </Box>
 
     )

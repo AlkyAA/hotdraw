@@ -1,13 +1,14 @@
 import Link from "next/link";
-import {Button, Text} from "@chakra-ui/react";
+import {Button} from "@chakra-ui/react";
 
 type Props = {
     label: string,
     path: string
+    target?: string
 }
-export function TextLink({path, label}: Props) {
+export function TextLink({path, label, target}: Props) {
     return (
-        <Link href={path}>
+        <Link href={path} target={target}>
             <Button
                 variant={'unstyled'}
                 color={'sitePink'}
@@ -15,7 +16,6 @@ export function TextLink({path, label}: Props) {
                 _hover={{
                     color: 'sitePinkHover'
                 }}>
-
                 {label}
             </Button>
         </Link>

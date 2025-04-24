@@ -1,17 +1,22 @@
+"use client"
 import {
     Box,
 } from '@chakra-ui/react'
 import React from "react";
-import {PageTitle} from "@/components/PageTitle";
+import {TextLink} from "@/components/TextLink";
+import {useGallery} from "@/app/helpers/useGallery";
 
 
 export default function BagShow() {
+    const gallery = useGallery({
+        tag: 'bag-show',
+        title: 'Bag Show',
+        subTitle: 'Shown at a conference in New Zealand, 28-8-17'
+    })
     return (
         <Box w={'100%'}>
-            <PageTitle title={''} subTitle={'Shown at a conference in New Zealand, 28-8-17'}/>
-            <Box w={'100%'} textAlign={'justify'} color={'white'}>
-
-            </Box>
+            {gallery}
+            <TextLink path={'/dions/pub-room'} label={'Pub Room Show'}/>
         </Box>
 
     )

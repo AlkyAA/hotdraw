@@ -1,11 +1,23 @@
+"use client"
 import {
-    Box, Stack,Text
+    Box, Image, Stack, Text
 } from '@chakra-ui/react'
-import React from "react";
+import React, {useEffect} from "react";
+
 import {PageTitle} from "@/components/PageTitle";
 import {TextLink} from "@/components/TextLink";
+import {imageGallery, imageSrc} from "@/utils/utils";
 
 export default function Confest() {
+    const confestMap = imageSrc('confestMap_ddxkhw');
+    const alkyRemyReady = imageSrc('IMG_8879_iw8z5z');
+
+    useEffect(() => {
+        // @ts-ignore
+        const productGallery = imageGallery({tag: 'confest', containerId: '#image-gallery'});
+        productGallery.render();
+    }, []);
+
     return (
         <Box w={'100%'}>
             <PageTitle title={'Victorian road trip'} color={'#8273da'}/>
@@ -14,15 +26,19 @@ export default function Confest() {
                     <Text>My son Remus and I took a road trip holiday from Thursday 18th April 2019 to
                         26th April 2019
                     </Text>
+                    <img alt="confestMap" src={confestMap} />
+                    <img alt="alkyRemyReady" src={alkyRemyReady} />
                     <PageTitle title={'Getting to Confest'} color={'#8273da'} isSubHeader={true}/>
-
+                    <Box id={'image-gallery'} />
                     <PageTitle title={'Confest'} color={'#8273da'} isSubHeader={true}/>
+                    <TextLink path={'http://confest.org.au/'} target={'_blank'} label={'confest.org.au'}/>
                     <Text>
                         Sunday 21st Feb 2019
                     </Text>
                     <Text>
                         2nd day at Confest
                     </Text>
+                    <Text>insert gallery</Text>
                     <Text>
                         It&apos;s 11:00pm ish and I&apos;m slumbering in my tent. I&apos;ve just come in from walking around the
                         village stalls buying a sarong, looking at trinkets from the Far East as well as tasting Chai
@@ -40,6 +56,5 @@ export default function Confest() {
                 </Stack>
             </Box>
         </Box>
-
     )
 }

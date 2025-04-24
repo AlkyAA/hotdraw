@@ -1,3 +1,4 @@
+"use client"
 import {
     Box,
     Stack,
@@ -6,9 +7,11 @@ import {
 import React from "react";
 import {PageTitle} from "@/components/PageTitle";
 import {TextLink} from "@/components/TextLink";
+import {useGallery} from "@/app/helpers/useGallery";
 
 
 export default function Amalfi() {
+    const gallery = useGallery({tag: 'amalfi'})
     return (
         <Box w={'100%'}>
             <PageTitle title={'The Amalfi Coast'} subTitle={'29/6/2022'}/>
@@ -36,6 +39,7 @@ export default function Amalfi() {
                         there is a cafe perched discreetly on the edge of a cliff and on that hot summer day I bought a
                         lemon granita and cooled off under the trees. Ah Amalfi, povo one day, super rich the next.
                     </Text>
+                    {gallery}
                     <TextLink path={'/europa2022/palermo'} label={'Next Stop Palermo'}/>
                 </Stack>
             </Box>

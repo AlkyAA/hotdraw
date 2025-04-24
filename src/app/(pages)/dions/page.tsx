@@ -1,12 +1,9 @@
 import {
-    Box, Button, Flex, Grid, GridItem,
-    Image, Spacer, Stack,
-    Text, Wrap, WrapItem
+    Box, Flex, Grid, GridItem, Image, Text
 } from '@chakra-ui/react'
-import React, {ReactNode} from "react";
+import React from "react";
 import {PageTitle} from "@/components/PageTitle";
 
-import {usePathname} from "next/navigation";
 import Link from "next/link";
 
 export default function Dions() {
@@ -17,7 +14,7 @@ export default function Dions() {
     }
 
     const menuItems = [
-        'Tyreneum',
+        'Tyrenneum',
         'Bag Show',
         'Weird Flex',
         'Pub Room',

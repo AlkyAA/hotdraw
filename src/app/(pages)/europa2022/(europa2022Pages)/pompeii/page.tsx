@@ -1,14 +1,16 @@
+"use client"
 import {
     Box,
-    Image,
     Stack,
     Text
 } from '@chakra-ui/react'
-import React, {ReactNode} from "react";
+import React from "react";
 import {PageTitle} from "@/components/PageTitle";
 import {TextLink} from "@/components/TextLink";
+import {useGallery} from "@/app/helpers/useGallery";
 
 export default function Pompeii() {
+    const gallery = useGallery({tag: 'pompeii'})
     return (
         <Box w={'100%'}>
             <PageTitle title={'Pompeii'} subTitle={'27/6/2022'}/>
@@ -64,6 +66,7 @@ export default function Pompeii() {
                         Here are some pics from our visit and later on that afternoon enjoying parts of the modern
                         Pompeii and it&apos;s refreshments.
                     </Text>
+                    {gallery}
                     <TextLink path={'/europa2022/amalfi'} label={'Next Stop Amalfi'}/>
                 </Stack>
             </Box>

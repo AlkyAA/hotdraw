@@ -1,5 +1,5 @@
 {
-  "name": "next-test",
+  "name": "alky-hotdraw",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,17 +12,21 @@
     "@chakra-ui/icons": "^2.0.2",
     "@chakra-ui/next-js": "^2.1.5",
     "@chakra-ui/react": "^2.8.1",
+    "@cloudinary/react": "^1.11.2",
+    "@cloudinary/url-gen": "^1.11.2",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@types/node": "20.6.5",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
+    "cloudinary-video-player": "^1.10.5",
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.2",
     "framer-motion": "^10.16.4",
-    "next": "13.5.2",
+    "next": "^14.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-youtube": "^10.1.0",
     "typescript": "5.2.2"
   },
   "devDependencies": {

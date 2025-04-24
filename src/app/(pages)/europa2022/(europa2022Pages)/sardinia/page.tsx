@@ -1,14 +1,16 @@
+"use client"
 import {
     Box,
-    Image,
     Stack,
     Text
 } from '@chakra-ui/react'
 import React from "react";
 import {PageTitle} from "@/components/PageTitle";
 import {TextLink} from "@/components/TextLink";
+import {useGallery} from "@/app/helpers/useGallery";
 
 export default function Sardinia() {
+    const gallery = useGallery({tag: 'sardinia'})
     return (
         <Box w={'100%'}>
             <PageTitle title={'Sardinia'} subTitle={'14/6/2022'}/>
@@ -42,7 +44,8 @@ export default function Sardinia() {
                         return to a place many times to actually get it or get beyond the surface. I hope you like the
                         surfaces that chance threw my way xx
                     </Text>
-                    <TextLink path={'/europa2022/grotto'} label={'Special Visit to Neptune\'s Grotto'}/>
+                    {gallery}
+                    <TextLink path={'/europa2022/neptunes-grotto'} label={'Special Visit to Neptune\'s Grotto'}/>
                 </Stack>
             </Box>
         </Box>
